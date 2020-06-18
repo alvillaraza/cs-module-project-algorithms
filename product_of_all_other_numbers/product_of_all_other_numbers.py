@@ -2,10 +2,39 @@
 Input: a List of integers
 Returns: a List of integers
 '''
+def multiplyList(arr):
+    result = 1
+    for x in arr:
+        result = result * x
+    return result
+
 def product_of_all_other_numbers(arr):
     # Your code here
+    _size = len(arr)
+    #create a new array...multiplied = []
+    multiplied = []
+    for i in range(_size):
+        cur_index = []
+        # cur_index = i
+        # print(arr[i])
+    #pop out(remove) the current index
+        number_taken_out = arr.pop(i)
+        cur_index.append(number_taken_out)
+        # print('number removed', cur_index)
+        # print('array with removed number', arr)
+        # print('index', i)
+    #multiply the numbers in the array
+        multiplied_number = multiplyList(arr)
+        # print(multiplied_number)
+    
+    #append the new number into the multiplied = []
+        multiplied.append(multiplied_number)
+        # print('multiplied array = ', multiplied)
 
-    pass
+    #put the cur_index back into the array    
+        arr.insert(i, *cur_index)
+        # print(arr, 'end---')
+    return multiplied
 
 
 if __name__ == '__main__':
